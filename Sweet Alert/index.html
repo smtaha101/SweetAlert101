@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweet Alert</title>
+</head>
+<style>
+    button
+    {
+        display: inline-block;
+        width: 150px;
+        height: 28px;
+        background-color: #111;
+        color: #fff;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        outline: none;
+    }
+</style>
+<body>
+    <button onclick="showAlert()">Show Message</button>
+    <script>
+        function showAlert()
+        {
+            // swal("Hello world!");
+            // swal("Good job!", "You clicked the button!", "success");
+
+            swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this imaginary file!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+            })
+            .then((willDelete) => {
+            if (willDelete) {
+                swal("Poof! Your imaginary file has been deleted!", {
+                icon: "success",
+                });
+            } else {
+                swal("Your imaginary file is safe!");
+            }
+            });
+        }
+            
+            </script>  
+            <script src="sweetalert.min.js"></script>
+</body>
+</html>
